@@ -18,13 +18,17 @@ class App extends Component {
       selectedGifId: 'ND6xkVPaj8tHO'
     };
     // this.search("disney");
+    this.search = this.search.bind(this);
+    this.selectGif = this.selectGif(this);
   }
+
+  // WPQ9aBGtsihYFC9Pee06ndayO8CTXjLz
 
   search = (query) => {
     giphy('WPQ9aBGtsihYFC9Pee06ndayO8CTXjLz').search({
       q: query,
       rating: 'g'
-    }, (error, result) => {
+    }, (_error, result) => {
       this.setState({
         gifs: result.data
       });
