@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
@@ -14,7 +15,7 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: "ND6xkVPaj8tHO"
+      selectedGifId: 'ND6xkVPaj8tHO'
     };
     // this.search("disney");
   }
@@ -30,17 +31,24 @@ class App extends Component {
     });
   };
 
-  render () {
+  selectGif(id) {
+    this.setState({
+      selectedGifId: id
+    });
+  }
+
+
+  render() {
     return (
       <div>
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={this.selectedGifId} />
+            <Gif id={this.state.selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} />
+          <GifList gifs={this.state.gifs} selectGif={this.selectGif} />
         </div>
       </div>
     );
