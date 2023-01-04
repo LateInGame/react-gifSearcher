@@ -1,12 +1,11 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 
 import React, { Component } from 'react';
 
 class Gif extends Component {
   handleClick = () => {
-    // eslint-disable-next-line react/destructuring-assignment
     if (this.props.selectGif) {
-      // eslint-disable-next-line react/destructuring-assignment
       this.props.selectGif(this.props.id);
     }
   }
