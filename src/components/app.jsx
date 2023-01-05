@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: 'ND6xkVPaj8tHO'
+      selectedGifId: null // 'ND6xkVPaj8tHO'
     };
     // this.search("disney");
     this.search = this.search.bind(this);

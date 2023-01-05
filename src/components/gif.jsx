@@ -11,8 +11,13 @@ class Gif extends Component {
   }
 
   render () {
+    const { id } = this.props;
+    if (!id) {
+      return null;
+    }
+
     // eslint-disable-next-line react/destructuring-assignment
-    const src = `https://media3.giphy.com/media/${this.props.id}/giphy.gif`;
+    const src = `https://media3.giphy.com/media/${id}/giphy.gif`;
     return (
     // eslint-disable-next-line max-len
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
